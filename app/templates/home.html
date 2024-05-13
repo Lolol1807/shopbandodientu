@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class='row'>
+{% for product in products %}
+  <div class="card mt-4" style="width: 18rem; margin-left:20px; margin-top:20px; text-align:center">
+    <img src="{{product.img.url}}" class="card-img-top" height='200px'>
+    <h5 class="card-title" style="color:black">{{product.name}}</h5>
+    <h5 class="card-title" style="color:red">{{product.price}} VND </h5>
+    <div class='p-2'>
+      <a href='{% url "detail" id=product.id %}' class='btn btn-primary'>Chi tiết</a>
+    </div>      
+  </div>
+{% endfor %}
+</div>
+{% endblock content %}
